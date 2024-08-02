@@ -1,5 +1,7 @@
+![book](images/banner.webp)
+# Amazon Book Review Analysis
 
-# Amazon Book Review Insight Project
+_Author:_ _James Warsing_
 
 ## Project Overview
 This project aims to enhance customer satisfaction and improve book recommendations on Amazon by analyzing user reviews. I utilized a dataset comprising user reviews of books, including review text and corresponding scores, to address these goals. This [Amazon Book Reviews](https://www.kaggle.com/datasets/mohamedbakhet/amazon-books-reviews/data) dataset is well-suited for the problem as it provides direct feedback from customers about their reading experiences, enabling us to analyze sentiment and predict review scores.
@@ -11,9 +13,9 @@ This project aims to enhance customer satisfaction and improve book recommendati
 4. [Modeling](#modeling)
 5. [Evaluation](#evaluation)
 6. [Business Recommendations](#business-recommendations)
-7. [Installation and Usage](#installation-and-usage)
-8. [Contributing](#contributing)
-9. [License](#license)
+7. [Next Steps](#next-steps)
+8. [Contact](#contact)
+
 
 ## Business Understanding
 Amazon aims to enhance customer satisfaction and improve book recommendations. By leveraging user reviews, we can gain insights into customer sentiment and predict review scores, helping to tailor recommendations and identify areas for product improvement.
@@ -27,12 +29,12 @@ This dataset provides direct feedback from customers about their reading experie
 
 ## Data Preparation
 ### Text Cleaning
-To prepare the data for analysis and modeling, we perform the following text cleaning steps:
+To prepare the data for analysis and modeling, i perform the following text cleaning steps:
 
 
 
 ### Feature Extraction
-We use the TF-IDF (Term Frequency-Inverse Document Frequency) method to convert the cleaned text data into numerical features suitable for machine learning models.
+I used the TF-IDF (Term Frequency-Inverse Document Frequency) method to convert the cleaned text data into numerical features suitable for machine learning models.
 
 ## Modeling
 We implemented several machine learning models using `scikit-learn` and `xgboost` libraries:
@@ -41,16 +43,25 @@ We implemented several machine learning models using `scikit-learn` and `xgboost
 1. **Model Selection**: Chosen for its simplicity and interpretability.
 2. **Hyperparameter Tuning**: Used GridSearchCV to optimize parameters.
 3. **Training**: Trained the model on the training set with optimal hyperparameters.
-[lr3]('images/lr3_corr')
+
+![lr3](images/lr3_corr.png)
+![lr3_ROC](images/lr3_ROC.png)
+
 ### Random Forest
 1. **Model Selection**: Chosen for its robustness and feature importance evaluation.
 2. **Hyperparameter Tuning**: Used RandomizedSearchCV to optimize parameters.
 3. **Training**: Trained the model on the training set with optimal hyperparameters.
 
+![rf_corr](images/rf-corr.png)
+![rf_ROC](images/rf_ROC.png)
+
 ### XGBoost
 1. **Model Selection**: Chosen for its high performance and ability to handle imbalanced datasets.
 2. **Hyperparameter Tuning**: Used RandomizedSearchCV to optimize parameters.
 3. **Training**: Trained the model on the training set with optimal hyperparameters.
+
+![xgb](images/xgb_corr.png)
+![xgb_ROC](images/xgb_ROC.png)
 
 ## Evaluation
 The models were evaluated using accuracy, precision, recall, and F1-score. I also used confusion matrices to visualize the performance of each model.
@@ -60,7 +71,7 @@ The models were evaluated using accuracy, precision, recall, and F1-score. I als
 - **Random Forest**: Accuracy: 0.76, Precision: 0.68, Recall: 0.71, F1-Score: 0.69
 - **XGBoost**: Accuracy: 0.76, Precision: 0.66, Recall: 0.81, F1-Score: 0.73
 
-### Interpretation of the scores
+### Interpretation of the Scores
 
 __Accuracy:__ In this project, accuracy tells us the overall correctness of our model predictions. However, because we might have an imbalance between positive and negative reviews, accuracy alone isn't enough to judge the model performance.
 
@@ -80,7 +91,7 @@ __VADER:__ VADER is specifically designed for sentiment analysis of social media
 - **TextBlob Sentiment (Binary)**: Accuracy: 0.43, Precision: 0.39, Recall: 0.81, F1-Score: 0.52
 - **VADER Sentiment (Binary)**: Accuracy: 0.45, Precision: 0.39, Recall: 0.71, F1-Score: 0.50
 
-### Interpretation in Terms of the Project
+### Interpretation of the Scores
 __Accuracy:__ In the context of sentiment analysis, accuracy indicates the overall correctness of the sentiment predictions. Both TextBlob and VADER show low accuracy, suggesting that they may not be reliable on their own for classifying sentiments in reviews.
 
 __Precision:__ Precision is critical in sentiment analysis to avoid recommending books that are actually negatively reviewed (false positives). Both TextBlob and VADER have low precision (0.39), indicating a high rate of false positives, which is problematic for maintaining customer trust.
@@ -90,7 +101,7 @@ __Recall:__ Recall is important for capturing as many positive reviews as possib
 __F1-Score:__ The F1-Score balances precision and recall. TextBlob (0.52) and VADER (0.50) both have low F1-Scores, reflecting their overall struggle to accurately and reliably classify sentiments.
 
 ## Business Recommendations
-Based on the model performance and sentiment analysis, we recommend:
+Based on the model performance and sentiment analysis, I recommend:
 1. __Improve Product Recommendations__
 
     - __What to Do:__ Use the Logistic Regression model to predict how likely customers are to rate a product positively based on their reviews.
@@ -122,3 +133,8 @@ Based on the model performance and sentiment analysis, we recommend:
     - __What to Do:__ Regularly update and fine-tune the predictive models with new data to maintain their accuracy and effectiveness.
     
     - __Why:__ Keeping models up-to-date ensures they continue to provide accurate predictions, adapting to changing customer preferences and behaviors. 
+
+
+
+# Contact
+- __For any questions contact [James Warsing](www.linkedin.com/in/jameswarsing)__
